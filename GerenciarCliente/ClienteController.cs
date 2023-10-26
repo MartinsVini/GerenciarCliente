@@ -20,7 +20,7 @@ namespace GerenciarCliente
             return Ok(clientes);
         }
 
-        [HttpGet("{senha}/login")]
+        [HttpGet("/login")]
         public async Task<ActionResult<Cliente>> Logar(string email, string senha)
         {
             bool logado = await clienteRepositorio.Logar(email, senha);
@@ -35,7 +35,7 @@ namespace GerenciarCliente
             return Ok(cliente);
         }
 
-        [HttpPost]
+        [HttpPost("/Cadastrar")]
         public async Task<ActionResult<Cliente>> Cadastrar([FromBody] Cliente cliente)
         {
             Cliente cliente1 = await clienteRepositorio.Adicionar(cliente);

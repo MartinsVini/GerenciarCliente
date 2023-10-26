@@ -24,13 +24,13 @@ namespace GerenciarCliente
                 .Property(c => c.Nome).IsRequired().HasMaxLength(250);
 
             modelBuilder.Entity<Cliente>()
-                .Property(c => c.CPF).IsRequired().HasMaxLength(11);
+                .Property(c => c.CPF).IsRequired().HasMaxLength(250);
 
             modelBuilder.Entity<Cliente>()
-                .Property(c => c.Senha).IsRequired().HasMaxLength(20);
+                .Property(c => c.Senha).IsRequired().HasMaxLength(250);
 
             modelBuilder.Entity<Cliente>()
-                .Property(c => c.DataNascimento).IsRequired().HasMaxLength(9);
+                .Property(c => c.DataNascimento).IsRequired().HasMaxLength(250);
 
             base.OnModelCreating(modelBuilder);
         }
